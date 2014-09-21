@@ -1,0 +1,36 @@
+\begin{tikzpicture}[rounded corners=0em,decoration={random steps,segment length=10em,amplitude=0},scale=1.65, clip=true,line width=0.05em]
+\clip(-1.6,-1.15) rectangle (11.2,7.3);
+%\draw(-1.6,-1.15) rectangle (11.2,7.3);
+\begin{loglogaxis}[xmin=1e-11, xmax=1.0, ymin=1e-15, ymax=10, width=360pt, height=250pt,
+xlabel={Length (m)},ylabel={Time (s)},
+legend style={cells={anchor=west},font=\tiny},
+              tick label style={font=\tiny},
+              ytick={1e-15,1e-13,1e-11,1e-9,1e-7,1e-5,1e-3,1e-1},
+              xtick={1e-11,1e-9,1e-7,1e-5,1e-3,1e-1},
+              label style={font=\tiny},
+              ylabel style={yshift=20pt},
+              xlabel style={yshift=10pt},
+              xticklabel style={yshift=12pt},
+              yticklabel style={xshift=12pt},clip=true
+]
+\end{loglogaxis}
+\begin{scope}[rounded corners=0.1em]
+\draw[top color=yellow!60, bottom color=yellow!100,draw=gray] (0.2,0.2)rectangle (2.7,1.5) node[black,midway,above=-0.75em,font=\scriptsize]{Quantum};
+
+\draw[top color=yellow!60,top color=red!60, bottom color=red!100,draw=gray] (1.3,1)rectangle (4,3);
+\node[font=\scriptsize,text width=4em,text centered] at (3.2,2.7){\textcolor{white}{Atomistic MD, MC}};
+
+\draw[top color=yellow!60,top color=green!50, bottom color=green!80,draw=gray] (3.15,2.5)rectangle (7.5,5);
+\node[font=\scriptsize,text width=8em,text centered] at (6.6,4.3){Mesoscopic DPD, LBM, BD};
+
+\draw[top color=yellow!60,top color=blue!50, bottom color=blue!80,draw=gray] (6.85,4.25)rectangle (11.15,7.25);
+\node[font=\scriptsize,text width=8em,text centered,white] at (10.25,6.75){Continuum Navier-Stokes};
+
+
+
+
+%\node[rectangle,top color=red!60, bottom color=red!100,draw=gray,text width=2.8em,font=\scriptsize, , text height=0.8em, text centered] at (2.7,2.8){\textcolor{white}{Atomistic MD, MC}};
+%\node[rectangle,top color=green!60, bottom color=green!100,draw=gray,text width=4.5em,font=\scriptsize, text height=1.4em, text centered] at (5.5,4.7){Mesoscopic DPD,LBM,BD};
+%\node[rectangle,top color=blue!50, bottom color=blue!70,draw=gray,text width=8em,font=\scriptsize, text height=2em, text centered,inner sep=0.2em, inner ysep=0.5em] at (8.725,7){\textcolor{white}{Continuum Navier-Stokes}};
+\end{scope}
+\end{tikzpicture}

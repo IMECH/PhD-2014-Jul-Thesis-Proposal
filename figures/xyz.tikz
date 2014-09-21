@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+\begin{axis}[xmin=-15, xmax=15, ymin=-15, ymax=15, zmin=-15,zmax=15,width=350pt, height=300pt,
+xlabel={$x$}, ylabel=$y$, zlabel=$z$,
+legend style={cells={anchor=west}}]
+
+\addplot3[only marks, mark=ball, ball color=blue]  table[x=x,y=y,z=z]{./figures/data/xyz.dat};
+
+\end{axis}
+\end{tikzpicture}

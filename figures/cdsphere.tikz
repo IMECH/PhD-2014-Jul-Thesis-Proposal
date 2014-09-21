@@ -1,0 +1,37 @@
+\begin{tikzpicture}[rounded corners=0em,decoration={random steps,segment length=10em,amplitude=0},scale=1.65,line width= 0.1em, clip=true]
+\clip(-1.5,-1.2) rectangle (10,8.25);
+%\draw(-1.5,-1.2) rectangle (10,8);
+\begin{loglogaxis}[xmin=0.1, xmax=1000, ymin=0.01, ymax=10000, width=320pt, height=275pt,
+xlabel=$\mathrm{Re}$,ylabel=$C_d$,
+legend style={cells={anchor=west},font=\tiny},
+              tick label style={font=\tiny},
+              label style={font=\tiny},
+              ylabel style={yshift=20pt},
+              xlabel style={yshift=10pt},
+              xticklabel style={yshift=12pt},
+              yticklabel style={xshift=10pt},clip=true
+]
+
+\addplot[only marks, draw=black, fill=black!30, mark size=2] coordinates {
+		( 0.20,112.34)
+                ( 0.99, 27.33)
+                ( 2.10, 13.01)
+                ( 4.02,  7.04)
+                ( 9.80,  3.28)
+                ( 22.00, 2.02)
+                ( 40.98, 1.31)
+                ( 81.32, 0.98)
+                (101.25, 0.99)};
+\addlegendentry{DPD}
+
+\addplot+[mark=none,domain=0.1:1000,samples=2,densely dashed,red] {24/x}; 
+\addlegendentry{$24/\mathrm{Re}$}
+%\addlegendentry{$\frac{24}{\mathrm{Re}}$}
+
+
+\addplot+[mark=none,domain=0.2:1000,samples=200,smooth,blue] {21.12/x + 6.3/sqrt(x) + 0.25}; 
+\addlegendentry{$21.12/\mathrm{Re}+6.3/\sqrt{\mathrm{Re}}+0.25$}
+%\addlegendentry{$\frac{21.12}{\mathrm{Re}}+\frac{6.3}{\sqrt{\mathrm{Re}}}+0.25$}
+
+\end{loglogaxis}
+\end{tikzpicture}

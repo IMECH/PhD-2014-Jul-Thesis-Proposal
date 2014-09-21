@@ -1,0 +1,198 @@
+\newpage
+\title{}
+\author{}
+\hspace{0.075em}
+\begin{tikzpicture}
+  %\initializesizeandshifts
+  %\setxshift{-60}
+   %\setyshift{2}
+
+  %% the title block, #1 - shift, the default value is (0,0), #2 - width, #3 - scale
+  %% the alias of the title block is `title', so we can refer to its boundaries later
+  %\ifthenelse{\equal{\template}{1}}{ 
+  %  \titleblock{60}{0}
+  %}{
+  %  \titleblock{60}{0}
+  %}
+
+
+  %frame/.style={rounded corners=30, line width=0.4cm, inner sep=1cm},
+  %frametwo/.style={thick, inner sep=1cm, %
+  %  drop shadow={shadow xshift=0.2cm, shadow yshift=-0.2cm, opacity=0.3}, %
+  %  decorate, decoration={random steps,segment length=1cm,amplitude=0.15cm}
+    % decorate, decoration={penciline,amplitude=0.2cm}
+  %},% 
+
+  %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
+\blocknodew[($(currenty)-(-0.5,0)$)]{84.5}{已开展的研究工作(一)} %
+ {   
+\begin{minipage}{0.54\linewidth}
+\coloredbox{colorone!50!}{
+\begin{center}
+\begin{minipage}[t]{0.49\linewidth}
+\coloredbox{colorthree!50!}{
+\begin{tikzfigure}[球形液滴的形成]
+\includegraphics[width=0.3875\textwidth]{./figures/drop/1.pdf}
+\includegraphics[width=0.3875\textwidth]{./figures/drop/4.pdf}\\
+\includegraphics[width=0.3875\textwidth]{./figures/drop/7.pdf}
+\includegraphics[width=0.3875\textwidth]{./figures/drop/10.pdf}
+\end{tikzfigure}}
+\end{minipage}
+\begin{minipage}[t]{0.49\linewidth}
+\coloredbox{colorthree!50!}{
+\begin{tikzfigure}[液滴接触角的模拟]
+\input{./figures/angle.tikz}
+\end{tikzfigure}}
+\end{minipage}
+\end{center}
+\vspace{-30pt}
+\begin{center}
+\begin{minipage}[t]{0.49\linewidth}
+\coloredbox{colorthree!50!}{
+\begin{tikzfigure}[纤维阵列中细胞的模拟示意图]
+\includegraphics[width=0.975\textwidth]{./figures/matrix.pdf}
+\end{tikzfigure}}
+\end{minipage}
+\begin{minipage}[t]{0.49\linewidth}
+\coloredbox{colorthree!50!}{
+\begin{tikzfigure}[刚体圆球绕流的阻力系数]
+\input{./figures/cdsphere.tikz}
+\end{tikzfigure}}
+\end{minipage}
+\end{center}
+\vspace{-35pt}
+}
+\end{minipage}
+\begin{minipage}{0.005\linewidth}
+  {~}
+\end{minipage}
+\begin{minipage}{0.45\linewidth}
+\coloredbox{colorone!50!}{
+\begin{itemize}
+\item 图4. 在表面张力的作用下, 液滴由立方体转变为球形. 传统的DPD仅能模拟多体系统中液-液及液-固界面特性. 通过引入新型作用势和多体DPD模型, 实现多相流动系统中微重力, 粘性力, 表面张力及毛细力相互作用的模拟.
+\item 图5. 调整多体DPD中液体粒子和固壁粒子间的作用力参数可实现不同接触角的模拟. 通过引入新型作用势或多体DPD, 可实现不同性质流体的模拟. 
+\item 图6. 通过加入刚体模型, 模拟不同孔隙率的圆柱阵列对流体流动的影响, 并以此来初步研究细胞外纤维基质对细胞受体液流体作用力的屏蔽作用. 
+\item 图7. 应用刚体模型研究球体绕流, 将结果与理论解和实验结果对比. 此外还研究了圆柱绕流和含运动颗粒的流动. 
+\end{itemize}
+}
+\vspace{-0.5em}
+
+\coloredbox{colorone!50!}{
+{\Large\bfseries\textcolor{blocktitletextcolor}{小结}}\vspace{0.25em}
+\small
+
+\begin{itemize}
+\item 应用新型保守势和改进的DPD模型, 实现了不同性质流体的模拟.
+\item 通过引入刚体模型, 初步研究了细胞外纤维基质对细胞受间质流体作用力的屏蔽作用.
+\end{itemize}
+
+\vspace{0.75em}
+{\Large\bfseries\textcolor{blocktitletextcolor}{发表的相关文章}}\vspace{0.5em}
+\small
+
+\begin{basedescript}{\desclabelstyle{\pushlabel}\desclabelwidth{1em}}
+\item[1.] Zhou L. V., Liu M. B. and Chang, J. Z., Acta Polymerica Sinica 7: 720-727, 2012.
+\item[2.] Liu M.B., Liu G.R., Zhou L. V. and Chang J. Z., Archives of Computational Methods in Engineering.(2014. Accept)
+\end{basedescript}
+}
+\end{minipage}
+}
+
+
+%%%%%%%%%% ------------------------------------------ %%%%%%%%%%
+\blocknodew[($(currenty)-(0,0)$)]{84.5}{已开展的研究工作(二)} 
+{   
+\begin{minipage}{0.54\linewidth}
+\coloredbox{colorone!50!}{
+\begin{center}
+\begin{minipage}[t]{0.49\linewidth}
+\coloredbox{colorthree!50!}{
+\begin{tikzfigure}[微缩通道中高分子链的模拟]
+%\includegraphics[width=0.975\textwidth]{./figures/chainY4000s.pdf}
+\input{./figures/chainY4000s.tikz}
+%\includegraphics[width=0.97\textwidth]{./figures/Tprof.pdf}
+\end{tikzfigure}}
+\end{minipage}
+\begin{minipage}[t]{0.49\linewidth}
+\coloredbox{colorthree!50!}{
+\begin{tikzfigure}[速度, 密度和温度曲线]
+%\includegraphics[width=0.97\textwidth]{./figures/Tprof.pdf}
+\input{./figures/DNAvx.tikz}
+\end{tikzfigure}}
+\end{minipage}
+\end{center}
+\vspace{-45pt}
+\begin{center}
+\begin{minipage}[t]{0.49\linewidth}
+\coloredbox{colorthree!50!}{
+\begin{tikzfigure}[红细胞模型和模拟]
+%\input{./figures/network2continuum.tex}
+\innerblockplain[colorone!80!]{\includegraphics[width=\textwidth]{./figures/rbcmodel.pdf}}
+\vspace{-0.15em}
+
+\innerblockplain[colorone!80!]{\includegraphics[width=\textwidth]{./figures/rbc.png}}
+\vspace{-0.85em}
+%\includegraphics[width=0.4\textwidth]{./figures/hexagonalcell.pdf}
+%\includegraphics[width=0.55\textwidth]{./figures/bend.pdf}
+\end{tikzfigure}}
+\end{minipage}
+\begin{minipage}[t]{0.49\linewidth}
+\coloredbox{colorthree!50!}{
+\begin{tikzfigure}[癌细胞通过微缩通道的构型]
+%\includegraphics[width=\textwidth]{./figures/x.pdf}
+\input{./figures/cellx.tikz}
+\end{tikzfigure}
+}
+\end{minipage}
+\end{center}
+\vspace{-35pt}
+}
+\end{minipage}
+\begin{minipage}{0.005\linewidth}
+  {~}
+\end{minipage}
+\begin{minipage}{0.45\linewidth}
+\coloredbox{colorone!50!}{
+\begin{itemize}
+\item 图8. 由珠簧链模型(WLC, FENE等)构造高分子链, 来模拟在不同结构的管道和不同物理场作用下高分子链的流动, 并得到了多种高分子链典型构型.
+\item 图9. 通过模拟不同体积分数和长度的高分子链在微缩通道中的运动, 研究不同位置的速度, 密度和温度曲线, 得到了高分子链在微通道流动中的运动和迁移特征.
+\item 图10. 应用珠簧链模型构造出三角形网络, 并引入二面角等作用势来模拟细胞膜. 通过恰当的参数匹配和选取, 可模拟血红细胞和其它细胞的运动和变形.
+\item 图11. 红细胞模型可进一步扩展到其它细胞的模拟, 通过调整细胞膜网络模型中的参数可以有效模拟具有不同力学性质的细胞在不同外力作用下的运动与变形特性
+\end{itemize}
+}
+\vspace{-0.5em}
+
+\coloredbox{colorone!50!}{
+{\Large\bfseries\textcolor{blocktitletextcolor}{小结}}\vspace{0.25em}
+\small
+
+\begin{itemize}
+\item 应用珠簧链模型模拟了含高分子链的溶液流动, 并得高分子链在微通道流动中的运动和迁移等特征.
+\item 应用珠簧链模型并引入二面角等作用势来构造细胞模型, 并实现了红细胞和其它细胞的模拟. 
+\end{itemize}
+
+\vspace{1em}
+{\Large\bfseries\textcolor{blocktitletextcolor}{发表的相关文章}}\vspace{0.5em}
+\footnotesize
+
+\begin{basedescript}{\desclabelstyle{\pushlabel}\desclabelwidth{1em}}
+\item[3.] Zhou L. V., Liu M. B. and Chang J. Z., Interaction and Multiscale Mechanics 6(2):
+157-172, 2013.
+\item[4.] 周吕文, 刘谋斌, 常建忠. 颗粒材料计算力学研究进展. 2012:625-633.\vspace{0.2em}
+\end{basedescript}
+}
+\end{minipage}
+}
+
+%%%%%%%%%% ------------------------------------------ %%%%%%%%%%
+\blocknodew[($(currenty)-(0,0)$)]{84.5}{下一步研究工作安排}
+ {\vspace{-0.75em}
+\begin{itemize}
+\item  在刚体模型中, 对纤维阵列中的组织液流动和含颗粒的流动做更多算例和进一步分析, 以获得纤维阵列中细胞受间质流体作用力的机制, 探求颗粒在流动中自身的运动特性和相关机理及对流体流动的影响.
+\item 改进DPD边界条件, 以实现出入口边界条件. 在用DPD模拟管道流动时, 现有的方法一般采用周期性边界条件, 对于含纤维阵列或颗粒的流动, 很难实现均匀来流的模拟.
+\item 进一步完善细胞模拟方面的工作, 特别是与实际细胞的参数匹配及结果的定量分析. 并将模拟结果与相关实验和计算做比较, 以近一步校正模型和参数的选取.
+\item 用珠簧链和键角势构造三维胞外纤维基质. 结合已有的细胞模型, 模拟间质流, 胞外基质和细胞三者在流场中的耦合, 并分析各自在肿瘤生长和迁移过程中的作用.
+\end{itemize}
+}
+\node[white] at (17.7,-175) {\bf 中国科学院力学研究所~2014年博士研究生学位论文开题\qquad\qquad\qquad\qquad  周吕文~~zhoulvwen@imech.ac.cn \qquad \qquad\qquad\qquad   第2页, 共2页};
+\end{tikzpicture}

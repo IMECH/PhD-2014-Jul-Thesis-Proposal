@@ -1,0 +1,85 @@
+\usetikzlibrary{%
+    decorations.pathreplacing,%
+    decorations.pathmorphing,arrows
+}
+\begin{tikzpicture}[rounded corners=0.em,decoration={random steps,segment length=10em,amplitude=0},scale=1.65,line width= 0.1em, clip=true]
+%\draw(-1.5,-1.2) rectangle (10,8.25);
+\clip(-1.5,-1.2) rectangle (10,8.25);
+\begin{scope}[yshift=130pt]
+  \begin{axis}[xmin=-15, xmax=15, ymin=-0.1, ymax=1.2, width=320pt, height=140pt,
+              ytick={0,0.2,0.4,0.6,0.8,1},
+              %xlabel={$z$}, 
+              ylabel={$v_x$},
+              xticklabel=\empty,
+              tick label style={font=\tiny},
+              label style={font=\tiny},
+              ylabel style={yshift=20pt},
+              %xlabel style={yshift=10pt},
+              %xticklabel style={yshift=12pt},
+              yticklabel style={xshift=10pt},
+              clip=true,thick,
+             legend style={font=\tiny, cells={anchor=west}},
+              ]
+   \addplot[no marks, blue]  table[x=z,y=v]{./figures/data/DNAprofile1.dat};
+   %\addlegendentry{$x = 25.5$};
+   \addplot[no marks, red]  table[x=z,y=v]{./figures/data/DNAprofile2.dat};
+   %\addlegendentry{$x = 16.5$};
+   \addplot[no marks, black]  table[x=z,y=v]{./figures/data/DNAprofile3.dat};
+   %\addlegendentry{$x = 0$};
+   \addplot[no marks, purple]  table[x=z,y=v]{./figures/data/DNAprofile4.dat};
+   %\addlegendentry{$x = -16.5$};
+   \addplot[no marks, brown!50!black]  table[x=z,y=v]{./figures/data/DNAprofile5.dat};
+   %\addlegendentry{$x = -25.5$};
+   
+   \addplot[color=gray,no marks, dashed] coordinates {(-5,-1) (-5,1.5)};
+   \addplot[color=gray,no marks, dashed] coordinates {(5,-1) (5,1.5)};
+  \end{axis}
+\end{scope}
+
+\begin{scope}[yshift=80pt]
+\begin{axis}[xmin=-15, xmax=15, ymin=0.75, ymax=1.25, width=320pt, height=90pt,
+              ytick={0.8,1,1.2},
+              %xlabel={$z$}, 
+              ylabel={$T$},
+              xticklabel=\empty,
+              tick label style={font=\tiny},
+              label style={font=\tiny},
+              ylabel style={yshift=20pt},
+              %xlabel style={yshift=10pt},
+              %xticklabel style={yshift=12pt},
+              yticklabel style={xshift=10pt},
+              clip=true,thick
+              ]
+   \addplot[no marks, blue]  table[x=z,y=t]{./figures/data/DNAprofile1.dat};
+   \addplot[no marks, red]  table[x=z,y=t]{./figures/data/DNAprofile2.dat};
+   \addplot[no marks, black]  table[x=z,y=t]{./figures/data/DNAprofile3.dat};
+   \addplot[no marks, purple]  table[x=z,y=t]{./figures/data/DNAprofile4.dat};
+   \addplot[no marks, brown!50!black]  table[x=z,y=t]{./figures/data/DNAprofile5.dat};
+   \addplot[color=gray,no marks, dashed] coordinates {(-5,0) (-5,1.5)};
+   \addplot[color=gray,no marks, dashed] coordinates {(5,0) (5,1.5)};
+  \end{axis}
+\end{scope}
+
+\begin{scope}[yshift=0pt]
+\begin{axis}[xmin=-15, xmax=15, ymin=1.5, ymax=4.75, width=320pt, height=120pt,
+              ytick={2,3,4},
+              xlabel={$z$}, 
+              ylabel={$\rho$},
+              tick label style={font=\tiny},
+              label style={font=\tiny},
+              ylabel style={yshift=20pt},
+              xlabel style={yshift=10pt},
+              xticklabel style={yshift=12pt},
+              yticklabel style={xshift=10pt},
+              clip=true,thick
+              ]
+   \addplot[no marks, blue]  table[x=z,y=rho]{./figures/data/DNAprofile1.dat};
+   \addplot[no marks, red]  table[x=z,y=rho]{./figures/data/DNAprofile2.dat};
+   \addplot[no marks, black]  table[x=z,y=rho]{./figures/data/DNAprofile3.dat};
+   \addplot[no marks, purple]  table[x=z,y=rho]{./figures/data/DNAprofile4.dat};
+   \addplot[color=gray,no marks, dashed] coordinates {(-5,1) (-5,5)};
+   \addplot[color=gray,no marks, dashed] coordinates {(5,1) (5,5)};
+  \end{axis}
+\end{scope}
+
+\end{tikzpicture}

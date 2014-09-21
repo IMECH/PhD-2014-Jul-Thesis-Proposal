@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+  \begin{axis}[xmin=-15, xmax=15, ymin=0, ymax=8, width=300pt, height=240pt,
+              xlabel={$z$}, ylabel={$\rho$},
+              label style={anchor=near ticklabel},
+              ylabel style={yshift=-2em}, xlabel style={yshift=0.3em},
+              tick label style={font=\scriptsize },
+              %label style={font=\scriptsize},
+legend style={cells={anchor=west}}
+              ]
+
+
+  \addplot[blue, densely dashed,thick] table[x=z,y=rho4000]{./figures/data/rho.dat}; \addlegendentry{$t = 4000$}
+  \addplot[red,thick] table[x=z,y=rho8000]{./figures/data/rho.dat}; \addlegendentry{$t = 8000$}
+
+  \addplot[gray, densely dotted,semithick,domain=-15:15,samples=2] {6};
+  \addplot[gray, densely dotted,semithick,domain=-15:15,samples=2] coordinates {(-10,0) (-10,8)};
+  \addplot[gray, densely dotted,semithick,domain=-15:15,samples=2] coordinates {(10,0) (10,8)};
+  \addplot[gray, densely dotted,semithick,domain=-15:15,samples=2] coordinates {(-11,0) (-11,8)};
+  \addplot[gray, densely dotted,semithick,domain=-15:15,samples=2] coordinates {(11,0) (11,8)};
+  \addplot[gray, densely dotted,semithick,domain=-15:15,samples=2] coordinates {(-9.25,0) (-9.25,8)};
+  \addplot[gray, densely dotted,semithick,domain=-15:15,samples=2] coordinates {(9.25,0) (9.25,8)};
+
+  \end{axis}
+\end{tikzpicture}

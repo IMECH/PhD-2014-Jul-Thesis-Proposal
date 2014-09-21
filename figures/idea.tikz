@@ -1,0 +1,148 @@
+\tikzstyle{decision} = [diamond,aspect=2, draw,fill=red!20, 
+    text width=32, text badly centered, inner sep=0pt]
+
+\tikzstyle{block} = [rectangle, draw=gray, gray,
+    text width=43, text centered, rounded corners, minimum height=25]
+\tikzstyle{selectblock} = [rectangle, draw=black, black, fill=blue!20,
+    text width=43, text centered, rounded corners, minimum height=25]
+
+\tikzstyle{line} = [draw,->, >=stealth',shorten >=1pt,auto,thick, gray]
+\tikzstyle{selectedline} = [draw,->, >=stealth',shorten >=1pt,auto,thick]
+\tikzstyle{selectededge} = [draw,line width=2pt,->,red!50,>=stealth',shorten >=-1pt,auto]
+{\tiny
+\begin{tikzpicture}[scale=1]
+    \clip (-1.3,-5.75) rectangle (15,4.35);
+    \coordinate (start)  at ( 0,  -1); % 研究内容
+    \coordinate (app)    at ( 3,  -1); % 应用
+    \coordinate (method) at ( 3, 3.5); % 方法
+    \coordinate (mpi)    at ( 3,-4.5); % 并行 CPU/GPU
+    \coordinate (couple) at ( 6, 3.5); % MD, DPD, SPH藕合
+    \coordinate (DNA)    at ( 6, 0.0); % 高分子
+    \coordinate (RBC)    at ( 6,-2.0); % 红细胞
+    \coordinate (field)  at ( 6, 1.5); % 多物理场
+    \coordinate (cell)   at ( 6,-3.5); % 乳腺癌细胞
+    \coordinate (scale)  at (12,-1  ); % 高性能大规模计算
+    \coordinate (poten)  at (3 ,1.5 ); % 势函数
+    \coordinate (simple) at (3 ,-2.8);
+    \coordinate (A)      at (3 ,0.25);
+    \coordinate (spring) at (9.5,-1);
+
+    \foreach  \name/             \lab/  \fill/     \color/ \start / \ended in {
+              start/          研究内容/  blue!20/black!50 /1 /1 ,
+                app/              应用/  blue!20/black!80/ 1 /2 ,
+             method/              方法/  blue!20/black!80/ 1 /2 ,
+                mpi/    {并行 CPU/GPU}/  blue!20/black!80/ 1 /2 ,
+             couple/{MD, DPD, SPH藕合}/  blue!20/black!80/ 1 /3 ,
+              poten/           势函数/   blue!20/black!80/ 1 /3 ,
+                DNA/            高分子/  blue!20/black!80/ 1 /6 ,
+                RBC/            红细胞/  blue!20/black!80/ 1 /9 ,
+              field/          多物理场/  blue!20/black!80/ 1 /8 ,
+               cell/        乳腺癌细胞/  blue!20/black!80/ 1 /10 ,
+              scale/  高性能大规模计算/  blue!20/black!80/ 1 /12
+                                                      }
+        \node<\start-\ended>(\name)[block] at (\name) {\lab};
+
+
+    \foreach \source/ \dest/\plot/ \start/ \ended in {
+               start/method/|-/1/2,
+               start/app/--/1/2,
+               start/mpi/|-/1/2,
+               method/couple/--/1/3,
+               method/poten/--/1/3,
+               app/RBC/-|/1/9,
+               app/DNA/-|/1/6,
+               RBC/cell/--/1/10,
+               DNA/field/--/1/9,
+               poten/app/--/1/4,
+               couple/A/{--(6,2.5)--(4.5,2.5)--(4.5,0.25)--}/1/4,
+               couple/{12.5,-0.4}/{--(12.5,3.5)--}/1/11,
+               mpi/{12.5,-1.6}/{--(12.5,-4.5)--}/1/11,
+               scale/field/|-/1/12,
+               scale/DNA/|-/1/12,
+               scale/RBC/|-/1/12,
+               scale/cell/|-/1/12
+}
+       \path<\start-\ended> [line] (\source) \plot (\dest);
+
+
+    \foreach  \name/             \lab/  \fill/     \color/ \start / \ended in {
+              start/          研究内容/  blue!20/black!50 /2 / 14,
+                app/              应用/  blue!20/black!80/ 3 / 14,
+             method/              方法/  blue!20/black!80/ 3 / 14,
+                mpi/    {并行 CPU/GPU}/  blue!20/black!80/ 3 / 14,
+             couple/{MD, DPD, SPH藕合}/  blue!20/black!80/ 4 / 14,
+              poten/           势函数/   blue!20/black!80/ 4 / 14,
+                DNA/            高分子/  blue!20/black!80/ 7 / 14,
+                RBC/            红细胞/  blue!20/black!80/ 10 / 14,
+              field/          多物理场/  blue!20/black!80/ 9 / 14,
+               cell/        乳腺癌细胞/  blue!20/black!80/11 / 14,
+              scale/  高性能大规模计算/  blue!20/black!80/ 12 / 14
+                                                      }
+        \node<\start-\ended>(\name)[selectblock] at (\name) {\lab};
+
+
+    \foreach \source/ \dest/\plot/ \start/ \ended in {
+               start/method/|-/3/ ,
+               start/app/--/3/ ,
+               start/mpi/|-/3/ ,
+               method/couple/--/4/,
+               method/poten/--/4/,
+               app/RBC/-|/10/ ,
+               app/DNA/-|/7/ ,
+               RBC/cell/--/11/,
+               DNA/field/--/9/ ,
+               poten/app/--/5/ ,
+               couple/A/{--(6,2.5)--(4.5,2.5)--(4.5,0.25)--}/5/,
+               couple/{12.5,-0.4}/{--(12.5,3.5)--}/12/,
+               mpi/{12.5,-1.6}/{--(12.5,-4.5)--}/12/,
+               scale/field/|-/13/ ,
+               scale/DNA/|-/13/ ,
+               scale/RBC/|-/13/ ,
+               scale/cell/|-/13/
+}
+       \path<\start-\ended>[selectedline] (\source) \plot (\dest);
+
+\node<1-5,7-> (simple) [decision, fill=none, draw=gray, gray] at (simple) {\scriptsize 简单流体};
+\path<1-5,7-> [line] (simple)--node[left]{\tiny 验证} (app);
+\node<6> (simple) [decision] at (simple) {\scriptsize 简单流体};
+\path<6> [selectedline] (simple)--node[left]{\tiny 验证} (app);
+
+\node<1-7,11-> (spring)[decision, fill=none, draw=gray, gray] at (spring) {\scriptsize 珠簧链};
+\node<8-10> (spring) [decision] at (spring) {\scriptsize 珠簧链};
+
+\path<1-7,9-> [line] (DNA)--node[sloped]{\tiny 验证} (spring);
+\path<1-9,11->(spring) [line] (spring)--node[sloped]{\tiny 应用} (RBC);
+
+\path<8> [selectedline] (DNA)--node[sloped]{\tiny 验证} (spring);
+\path<10>[selectedline] (spring)--node[sloped]{\tiny 应用} (RBC);
+
+
+\begin{pgfonlayer}{background}
+        \foreach \source / \dest / \plot/ \start / \ended in {
+               start/method/|-/3/3,
+               start/app/--/3/3,
+               start/mpi/|-/3/3,
+               method/couple/--/4/4,
+               method/poten/--/4/4,
+               app/RBC/-|/10/10,
+               app/DNA/-|/7/7,
+               RBC/cell/--/11/11,
+               DNA/field/--/9/9,
+               poten/app/--/5/5,
+               couple/A/{--(6,2.5)--(4.5,2.5)--(4.5,0.25)--}/5/5,
+               couple/{12.5,-0.4}/{--(12.5,3.5)--}/12/12,
+               mpi/{12.5,-1.6}/{--(12.5,-4.5)--}/12/12,
+               scale/field/|-/13/13,
+               scale/DNA/|-/13/13,
+               scale/RBC/|-/13/13,
+               scale/cell/|-/13/13
+                                                      }{
+            %\path<\fr-\en>[selected edge,-,line width=3pt,shorten >=3pt] (\source) -- (\dest);
+            \path<\start-\ended>[selectededge] (\source) \plot (\dest);}
+
+
+\path<6> [selectededge] (simple)-- (app);
+\path<8> [selectededge] (DNA)-- (spring);
+\path<10> [selectededge] (spring)-- (RBC);
+\end{pgfonlayer}
+\end{tikzpicture}}

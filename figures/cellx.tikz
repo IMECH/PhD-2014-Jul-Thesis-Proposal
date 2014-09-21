@@ -1,0 +1,53 @@
+\usetikzlibrary{%
+    decorations.pathreplacing,%
+    decorations.pathmorphing,arrows
+}
+\begin{tikzpicture}[rounded corners=0em,decoration={random steps,segment length=10em,amplitude=0},scale=1.65,line width= 0.1em, clip=true]
+%\draw(-1.5,-1.2) rectangle (10,8.25);
+\clip(-1.5,-1.2) rectangle (10,8.25);
+\begin{scope}[yshift=130pt]
+  \begin{axis}[xmin=-60, xmax=60, ymin=-20.75, ymax=20.75, width=320pt, height=140pt,
+              ytick={-20,0,20},
+              %xlabel={$t$}, 
+              ylabel={$z$},
+              xticklabel=\empty,
+              tick label style={font=\tiny},
+              label style={font=\tiny},
+              ylabel style={yshift=20pt},
+             % xlabel style={yshift=10pt},
+              xticklabel style={yshift=12pt},
+              yticklabel style={xshift=10pt},clip=true
+              ]
+
+   \addplot[color=black,no marks,thick] coordinates {(-70,-20.25) (-40,-22.25) (-23, -3.25) (23, -3.25) (40,-20.25) (70,-20.25)};
+   \addplot[color=black,no marks,thick] coordinates {(-70,20.25) (-40,20.25) (-23, 3.25) (23, 3.25) (40,20.25) (70,20.25)};
+
+   \addplot[no marks,ball color=red]  table[x=x1,y=y1]{./figures/data/cellshape.dat};
+   \addplot[no marks, blue!25!red,thick]  table[x=x2,y=y2]{./figures/data/cellshape.dat};
+   \addplot[no marks, blue!50!red,thick]  table[x=x3,y=y3]{./figures/data/cellshape.dat};
+   \addplot[no marks, blue!75!red,thick]  table[x=x4,y=y4]{./figures/data/cellshape.dat};
+   \addplot[no marks, blue!100!red,thick]  table[x=x5,y=y5]{./figures/data/cellshape.dat};
+   \addplot[no marks, blue!75!green,thick]  table[x=x6,y=y6]{./figures/data/cellshape.dat};
+   \addplot[no marks, blue!50!green,thick]  table[x=x7,y=y7]{./figures/data/cellshape.dat};
+   \addplot[no marks, blue!25!green,thick]  table[x=x8,y=y8]{./figures/data/cellshape.dat};
+   \addplot[no marks, green,thick]  table[x=x9,y=y9]{./figures/data/cellshape.dat};
+   \addplot[no marks, red!25!green,thick]  table[x=x10,y=y10]{./figures/data/cellshape.dat};
+   \addplot[no marks, red!50!green,thick]  table[x=x11,y=y11]{./figures/data/cellshape.dat};
+   \addplot[no marks, red!75!green,thick]  table[x=x12,y=y12]{./figures/data/cellshape.dat};
+  \end{axis}
+\end{scope}
+
+  \begin{axis}[xmin=-60, xmax=60, ymin=0, ymax=18, width=320pt, height=172pt,
+              %ytick={0,30,60,90,120,150,180},
+              xlabel={$x$}, ylabel={$t$},
+              tick label style={font=\tiny},
+              label style={font=\tiny},
+              ylabel style={yshift=20pt},
+              xlabel style={yshift=10pt},
+              xticklabel style={yshift=12pt},
+              yticklabel style={xshift=10pt},clip=true
+              ]
+   \addplot[no marks, black,thick]  table[x=x,y=t]{./figures/data/cellx.dat};
+
+  \end{axis}
+\end{tikzpicture}

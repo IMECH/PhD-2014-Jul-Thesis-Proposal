@@ -1,0 +1,43 @@
+\usetikzlibrary{%
+    decorations.pathreplacing,%
+    decorations.pathmorphing,arrows
+}
+\begin{tikzpicture}[rounded corners=0em,decoration={random steps,segment length=10em,amplitude=0},scale=1.65,line width= 0.1em, clip=true]
+%\draw(-1.5,-1.2) rectangle (10,8.25);
+\clip(-1.5,-1.2) rectangle (10,8.25);
+  \begin{axis}[xmin=-40, xmax=-15, ymin=0, ymax=180, width=320pt, height=275pt,
+              ytick={0,30,60,90,120,150,180},
+              xlabel={$A_{sl}$}, ylabel={$\theta$},
+              tick label style={font=\tiny},
+              label style={font=\tiny},
+              ylabel style={yshift=20pt},
+              xlabel style={yshift=10pt},
+              xticklabel style={yshift=12pt},
+              yticklabel style={xshift=10pt},clip=true
+              ]
+   \addplot[only marks, mark=*, draw=black, fill=black!30, mark size=1.5]  coordinates {
+           (-40,0) (-37.5,30) (-35, 55) (-32.5,75) (-30,90) 
+           (-27.5, 100) (-25,111) (-22.5,122) (-20,133) (-17.5, 150)};
+  \addplot[thick,black] coordinates {
+           (-40,0) (-37.5,30) (-35, 55) (-32.5,75) (-30,90) 
+           (-27.5, 100) (-25,111) (-22.5,122) (-20,133) (-17.5, 150)};
+
+  \end{axis}
+\begin{scope}[ media/.style={font={\tiny\sffamily}},
+    wave/.style={
+        decorate,decoration={snake,post length=1.4mm,amplitude=2mm,
+        segment length=2mm},thick},
+    interface/.style={
+        postaction={draw,decorate,decoration={border,angle=-45,
+                    amplitude=0.3cm,segment length=2mm}}},xshift=70,yshift=130,scale=1.25]
+
+\draw[fill=blue!20,semithick](20:1) arc(20:160:1);
+\draw[semithick,interface] (-1.5,0.35)--(1.5,0.35);
+
+\draw[semithick,blue](160:1)--++(70:0.75);
+\draw[blue] (160:1)++(0.2,0)  arc(0:70:0.2) node[right]{\tiny $\theta$};
+
+\node[above=-5] at (-0.4,-3.7) {\includegraphics[width=5em]{./figures/35.pdf}};
+\node[above=-5] at (4.2,-3.7) {\includegraphics[width=3em]{./figures/20.pdf}};
+\end{scope}
+\end{tikzpicture}
